@@ -1,0 +1,542 @@
+/* background animation */
+body {
+    background: -moz-linear-gradient(45deg, #02e1ba 0%, #26c9f2 29%, #d911f2 66%, #ffa079 100%);
+    background: -webkit-linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
+    background: linear-gradient(45deg, #02e1ba 0%,#26c9f2 29%,#d911f2 66%,#ffa079 100%);
+    background-size: 400% 400%;
+    -webkit-animation: Gradient 5s ease infinite;
+    -moz-animation: Gradient 10s ease infinite;
+    animation: Gradient 5s ease infinite;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+/* Animations */
+@-webkit-keyframes Gradient {
+  0% { background-position: 0 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0 50% }
+}
+
+@-moz-keyframes Gradient {
+  0% { background-position: 0 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0 50% }
+}
+
+@keyframes Gradient {
+  0% { background-position: 0 50% }
+  50% { background-position: 100% 50% }
+  100% { background-position: 0 50% }
+}
+/* Section 1: Introduction Styling */
+#introduction {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.intro-container {
+    display: flex;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.intro-text {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.intro-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* About Me Button */
+.about-me-button {
+    padding: 12px 24px;
+    background-color: #ffa079;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 30px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.about-me-button:hover {
+    transform: scale(1.1);
+    background-color: #d911f2;
+}
+
+/* Slideshow Styling */
+.intro-slideshow {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Individual slides */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideshow 10s infinite;
+}
+
+/* Image order in slideshow */
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.slide:nth-child(2) {
+    animation-delay: 3s;
+}
+.slide:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* Fade animation for slides */
+@keyframes slideshow {
+    0%, 20% { opacity: 1; }
+    25%, 95% { opacity: 0; }
+}
+
+/* Section 2: About Me Styling */
+
+#about-me {
+    display: flex;
+    justify-content: center;
+    text-align: justify;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.about-container {
+    display: flex;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.about-text {
+    flex: 1;
+    padding-right: 20px;
+    color: #000; /* Text color for About Me */
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #fff; /* Title color */
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* Family Image in About Me */
+.about-slideshow {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.about-slideshow .slideshow-container {
+    width: 300px; /* Adjust as needed */
+    height: 400px; /* Adjust as needed */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Individual slides */
+.about-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideshow 4s infinite; /* Total duration of the slideshow */
+}
+
+/* Image order in slideshow */
+.about-slideshow .slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.about-slideshow .slide:nth-child(2) {
+    animation-delay: 2s; /* Show second image after 4 seconds */
+}
+
+/* Fade animation for slides */
+@keyframes slideshow {
+    0%, 20% { opacity: 1; }
+    25%, 95% { opacity: 0; }
+}
+/* Section 3: Education Styling */
+#education {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.education-container {
+    display: flex;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    max-width: 1000px;
+    width: 100%;
+    gap: 20px;
+    align-items: center;
+}
+
+.education-text {
+    flex: 1;
+    padding-right: 20px;
+
+}
+
+.education-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.education-text p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #333;
+}
+
+/* School Year Images in Education */
+.education-slideshow {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.education-slideshow .slideshow-container {
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Individual slides */
+.education-slideshow .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0;
+    animation: slideshow 16s infinite; /* Adjusted total duration */
+}
+
+/* Image order in slideshow */
+.education-slideshow .slide:nth-child(1) {
+    animation-delay: 0s;
+}
+.education-slideshow .slide:nth-child(2) {
+    animation-delay: 4s;
+}
+.education-slideshow .slide:nth-child(3) {
+    animation-delay: 7s;
+}
+.education-slideshow .slide:nth-child(4) {
+    animation-delay: 10s; /* Added for the fourth image */
+}
+
+/* Fade animation for slides */
+@keyframes slideshow {
+    0%, 20% { opacity: 1; }
+    25%, 95% { opacity: 0; }
+}
+
+
+/* Section 4: Skills Styling */
+#skills {
+    display: flex;
+    flex-direction: column; /* Stack title and logos vertically */
+    align-items: center; /* Center align the title and logos */
+    padding: 50px 20px;
+}
+
+.skills-title {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+    color: green; /* Title color */
+    margin-bottom: 20px; /* Space between title and logos */
+}
+
+.skills-logos {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Adjust the gap between logos */
+    flex-wrap: wrap;
+}
+
+.skill-item {
+    text-align: center;
+}
+
+.skill-item .logo {
+    width: 2in;  /* 2 inch */
+    height: 2in; /* 2 inch */
+    border-radius: 8px; /* Slightly rounded corners */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+    object-fit: contain;
+    transition: transform 0.3s; /* Transition for hover effect */
+}
+
+.skill-item:hover .logo {
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
+.skill-item span {
+    font-size: 1.1rem; /* Adjust font size for names */
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-top: 6px; /* Space between logo and name */
+}
+/* Section 5: Contact Styling */
+#contact {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    border-radius: 15px;
+    border: 2px solid #FF1493;
+    margin-top: 30px;
+    text-align: center;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.contact-container {
+    max-width: 300px;
+    width: 100%;
+    padding: 30px;
+}
+
+.contact-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #FF1493;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    text-align: left;
+}
+
+/* Contact Item styling */
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+    gap: 10px;
+}
+
+.contact-item:hover {
+    background-color: #FF1493;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    color: #FF1493;
+}
+
+/* Styling for text within each contact item */
+.contact-item span {
+    font-weight: bold;
+    color: white;
+    margin-right: 10px;
+}
+
+.contact-item a {
+    color: #FFF;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #FFD700; /* Change to a bright color on hover */
+}
+#body-content {
+    position: relative;
+    width: 500%;
+    height: 100vh;
+}
+
+/* Butterfly container */
+#container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Butterfly itself */
+#butterfly {
+    position: absolute;
+    width: 366px;
+    height: 208px;
+    -webkit-transform: rotate3d(0, 1, 0, 0deg) scale3d(0.5, 0.5, 0.5);
+    -webkit-transform-origin: 80% 50%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-animation-name: butterflyani;
+    -webkit-animation-duration: 20s; /* Slower to fly gracefully */
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+/* Animation for the butterfly flight */
+@-webkit-keyframes butterflyani {
+    from {
+        -webkit-transform: rotate3d(0, 1, 0, 0deg) scale3d(0.5, 0.5, 0.5) translate3d(-50px, 50px, 0px);
+    }
+    25% {
+        -webkit-transform: rotate3d(0, 1, 0, 45deg) scale3d(0.5, 0.5, 0.5) translate3d(200px, 200px, 0px);
+    }
+    50% {
+        -webkit-transform: rotate3d(0, 1, 0, 180deg) scale3d(0.5, 0.5, 0.5) translate3d(400px, 100px, 0px);
+    }
+    75% {
+        -webkit-transform: rotate3d(0, 1, 0, 270deg) scale3d(0.5, 0.5, 0.5) translate3d(600px, 300px, 0px);
+    }
+    to {
+        -webkit-transform: rotate3d(0, 1, 0, 360deg) scale3d(0.5, 0.5, 0.5) translate3d(50px, 400px, 0px);
+    }
+}
+
+/* Wing styles */
+#leftwing, #rightwing {
+    background-image: url('http://www.eleqtriq.com/wp-content/static/demos/2010/css3d/img/wing.png');
+    background-repeat: no-repeat;
+    width: 178px;
+    height: 208px;
+    position: absolute;
+}
+
+/* Left wing animation */
+#leftwing {
+    -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+    -webkit-transform-origin: top right;
+    left: 0px;
+    top: 0px;
+    -webkit-animation-name: leftwingani;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+/* Right wing animation */
+#rightwing {
+    -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+    -webkit-transform-origin: top right;
+    left: 178px;
+    top: 0px;
+    -webkit-animation-name: rightwingani;
+    -webkit-animation-duration: 0.2s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+/* Wing flap animations */
+@-webkit-keyframes leftwingani {
+    from {
+        -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+    }
+    50% {
+        -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 80deg);
+    }
+    to {
+        -webkit-transform: rotateX(90deg) rotate3d(0, 1, 0, 0deg);
+    }
+}
+
+@-webkit-keyframes rightwingani {
+    from {
+        -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+    }
+    50% {
+        -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 100deg);
+    }
+    to {
+        -webkit-transform: rotateX(90deg) translate3d(-178px, 0px, 0px) rotate3d(0, 1, 0, 180deg);
+    }
+}
